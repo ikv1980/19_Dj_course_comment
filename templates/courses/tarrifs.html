@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block title %} 
+    <h1 class="pt-4 fw-semybold text-dark fs-1 pb-2 align-self-center">
+        {{ title }}
+    </h1>
+{% endblock %}
+
+
+{% block content %}
+<div class="form-section container">
+    {% if user.is_authenticated == False or user.profile.account_type == 'free' %}
+    <h4 class="alert alert-danger">Купите подписку на сайте :)</h4>
+    <p>Подписа даст доступ ко всем платным курсам</p>
+
+    <a href="{{ url }}" target="_blank"><button class="btn btn-success">Купить подписку (15$)</button></a>
+    {% else %}
+    <h4 class="alert alert-success">У вас максимальная подписка</h4>
+    {% endif %}
+</div>
+{% endblock %}

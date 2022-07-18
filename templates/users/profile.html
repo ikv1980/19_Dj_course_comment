@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+
+{% block title %} 
+    <h1 class="pt-4 fw-semybold text-dark fs-1 pb-2 align-self-center">
+        {{ title }}
+    </h1>
+{% endblock %}
+
+{% block content %}
+    <div class="container col-10 col-sm-8 col-lg-6 col-xl-4 profile">
+        <div class="d-flex media text-gray-dark">
+            <img class="bd-placeholder-img rounded" width="64" height="64" src="{{ user.profile.img.url }}">
+            <p class="media-body ms-2 pb-1 mb-0 small">
+                <span class="d-block text-gray-dark border-bottom"><b>Логин:  </b>{{ user.username }}</span>
+                <span class="d-block text-gray-dark"><b>Статус: </b>
+                    {% if user.is_staff %}
+                        Администратор
+                    {% else %}
+                        Пользователь
+                    {% endif %}
+                </span>
+                {% if user.email %}
+                <b>Email:</b> {{ user.email }}
+                {% endif %}
+            </p>
+        </div>
+        <hr class="text-danger border-2 opacity-50">  
+        <!-- Форма для обновления данных -->
+        <h4 class="text-center text-danger">Изменить данные</h4>
+        <form method="post" enctype="multipart/form-data" class="form-register mt-4 change">
+            {% csrf_token %}
+            {{ updateUserForm.as_p }}
+            {{ profileForm.as_p }}
+            <button class="btn btn-warning" type="submit">Обновить</button>
+        </form>
+    </div>
+{% endblock %}

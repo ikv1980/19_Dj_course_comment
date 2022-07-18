@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #e1e1e1;
+  font-weight: 300;
+  font-family: 'Montserrat', sans-serif;
+}
+
+a {
+  color: #6f6f6f;
+  text-decoration: none;
+  transition: color 200ms ease;
+}
+
+a.text-decoration-none:hover,
+header .logo a:hover {
+  color: #E22F35;
+}
+
+.contain {
+  width: 1258px;
+  margin: 0 auto;
+}
+
+header.contain {
+  display: flex;
+  width: 100%;
+  padding: 5px 5%;
+  background: #fef3e0;
+  /* border-bottom: 2px solid rgb(80, 1, 1); */
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 5px 5px 5px -2px rgba(0, 0, 0, 0.6);
+}
+
+header .logo a {
+  color: #470505;
+  font-weight: 600;
+  font-size: 35px;
+}
+
+header nav a {
+  color: #470505;
+  font-weight: 600;
+  font-size: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-left: 1px solid #CA5E48;
+  border-right: 1px solid #CA5E48;
+    
+}
+
+.courses {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 50px auto;
+}
+
+.courses .course {
+  background: #333;
+  padding: 20px;
+  box-sizing: border-box;
+  width: 30%;
+  color: #fff;
+  box-shadow: 5px 5px 5px -2px rgba(0, 0, 0, 0.6);
+}
+
+.less_det {
+  width: 20% !important;
+}
+
+.courses .course img {
+  width: 100%;
+}
+
+.courses .course h3 {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.courses .course a {
+  display: inline-block;
+  padding: 10px 12px;
+  border-radius: 5px;
+  background: #111;
+  color: #fff;
+  transition: transform 500ms ease;
+}
+
+.courses .course a:hover {
+  transform: scale(1.1);
+}
+
+.courses ul {
+  width: 90%;
+  line-height: 170%;
+  margin-left: 7%;
+  margin-top: 20px;
+  font-weight: 600;
+}
+
+.aside {width: 65%}
+.aside p {margin: 20px 0;}
+
+.presentation {
+  background: #ca5e48;
+  padding: 30px;
+  height: 250px;
+  box-sizing: border-box;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  box-shadow: 0px 5px 5px -2px rgba(0, 0, 0, 0.6);
+}
+
+.presentation h2 {
+  color: #fff;
+  font-size: 35px;
+  padding-top: 40px;
+}
+
+.presentation p {
+  color: #622424;
+  font-size: 16px;
+  padding-top: 6px;
+  max-width: 380px;
+}
+
+.presentation img {
+  float: right;
+  width: 200px;
+  position: relative;
+  top: 20.5px;
+}
+
+
+footer.contain {
+  display: flex;
+  width: 100%;
+  padding: 5px 5%;
+  position: fixed;
+  bottom: 0px;
+  background: #FEF3E0;
+  border-top: 1px solid rgb(80, 1, 1);
+  margin-top: 30px;
+  font-weight: 600;
+  box-shadow: 0px -5px 5px -2px rgba(0, 0, 0, 0.6);
+}
+
+
+.form-register {
+  padding: 20px;
+  background: #eaeaea;
+  background: #FEF3E0;
+  border: 1px solid #470505;
+  border-radius: 5px;
+  margin-top: 50px;
+  box-shadow: 5px 5px 5px -2px rgba(0, 0, 0, 0.6);
+}
+
+  
+.form-register > p {
+  text-align: start;
+  font-weight: bold;
+}
+  
+.form-register ul.errorlist {
+  color: #ff0000;
+  list-style-type: none;
+  text-align: start;
+  padding: 0px;
+  font-style: italic;
+  font-weight: 600;
+  margin-bottom: 0px;
+}
+
+.form-register p input,
+.form-register p textarea {
+  display: block;
+  width: 100%;
+  margin-top: 3px;
+}
+
+  .form-register .helptext {
+  color: #949494;
+  font-weight: 400;
+  font-style: italic;
+}
+
+
+/* ////////////////////////////////// */
+
+.profile {
+  padding: 20px;
+  background: #FEF3E0;
+  border: 1px solid #470505;
+  border-radius: 5px;
+  margin-top: 20px;
+  box-shadow: 5px 5px 5px -2px rgb(0 0 0 / 60%);
+}
+
+.profile {
+  text-align: start;
+}
+
+.profile form {
+  border: 1px solid #E38F97;
+  box-shadow: 0px 0px 1px 3px #E38F9740;
+}
+
+.form-register label[for=id_agreement] {
+  display: inline;
+  width: auto;
+  margin-right: 3px;
+}
+
+.form-register input[type=checkbox] {
+  display: inline;
+  width: 15px;    
+}
+
+
+.auth input,
+.form-register p input,
+.form-register p textarea {
+  display: block;
+  width: 100%;
+  margin-top: 5px;
+  border: 1px solid #ced4da;
+  padding: .375rem .75rem;
+  border-radius: .25rem;
+  }
+  
+.auth input:focus,
+.create input:focus,
+.create textarea:focus,
+.comment textarea:focus {
+  color: #212529;
+  background-color: #fff;
+  border-color: #86b7fe;
+  outline: 0;
+  box-shadow: 0px 0px 1px 3px rgba(44, 140, 214, 0.4);
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out
+}
+
+.auth ul {
+  text-align: start;
+}
+
+.form-register button {
+  min-width: 120px;
+}
+
+.hbutt {
+  width: 120px;
+}
+
+
+/* Стили для комментариев */
+
+.form-comment > p {
+  text-align: start;
+  font-weight: bold;
+}
+ 
+.form-comment p textarea {
+  display: block;
+  width: 100%;
+  margin-top: 3px;
+  resize: none;
+  max-height: 150px;
+  border: 1px solid #939496;
+  padding: .375rem .75rem;
+  border-radius: .25rem;
+}
+
+.comment textarea:focus {
+  color: #212529;
+  background-color: #fff;
+  border-color: #86b7fe;
+  outline: 0;
+  box-shadow: 0px 0px 1px 3px rgba(44, 140, 214, 0.4);
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out
+}
+
+.form-comment button {
+  min-width: 120px;
+}
+
+.comment .alert {
+  color: rgb(58, 4, 4);
+}
+
+@media(max-width: 520px) {
+  .form-register a {
+    display: block;
+  }
+}

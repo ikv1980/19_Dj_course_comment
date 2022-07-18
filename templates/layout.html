@@ -1,0 +1,60 @@
+<!doctype html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <header class="contain justify-content-between">
+            <span class="logo block"><a href="{% url 'home' %}" class="text-decoration-none">Lear&Rock</a></span>
+            <nav>
+                <a href="{% url 'home' %}" class="text-decoration-none bord">Главная</a>
+                <a href="{% url 'tarrifs' %}" class="text-decoration-none bord">Тарифы</a>
+                <a href="{% url 'courses' %}" class="text-decoration-none bord">Курсы</a>
+                <a href="{% url 'add-course' %}" class="text-decoration-none bord">Добавить курс</a>
+            </nav>
+            <div class="d-flex flex-md-column">
+                {% if not user.is_authenticated %}
+                <a href="{% url 'reg' %}">
+                  <button class="btn btn-warning me-3 me-md-0 mb-md-1 hbutt">Регистрация</button>
+                </a>
+                <a href="{% url 'user' %}">
+                  <button class="btn btn-success me-3 me-md-0 hbutt ">Войти</button>
+                </a>
+                {% else %}
+                <a href="{% url 'profile' %}">
+                  <button class="btn btn-warning me-3 me-md-0 mb-md-1 hbutt">Профиль</button>
+                </a>
+                <a href="{% url 'exit' %}">
+                  <button class="btn btn-danger me-3 me-md-0 hbutt">Выйти</button>
+                </a>
+                {% endif %}
+              </div>
+    </header>
+
+    <div>
+    {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-success">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+    </div>
+
+    <main class="text-center">
+        {% block title %}
+        {% endblock %}   
+        {% block content %}
+        {% endblock %}  
+    </main>
+
+    <footer class="contain">
+        @ Все права защищены
+    </footer>
+</body>
+</html>

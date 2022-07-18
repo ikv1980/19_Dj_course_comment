@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+{% block title %} 
+    <h1 class="pt-4 fw-semybold text-dark fs-1 pb-2 align-self-center">
+        {{ title }}
+    </h1>
+{% endblock %}
+
+
+{% block content %}
+<div class="courses container justify-content-between d-flex flex-wrap">
+    {% for el in courses %}
+    <div class="course m-2">
+        {% if el.image %}
+        <a href="{{ el.get_absolute_url }}"><img src="{{ el.image.url }}" alt="{{ el.title }}"></a>
+        {% else %}
+        <img src="/pictures/default.png" alt="{{ el.title }}">
+        {% endif %}
+
+        <h4>{{ el.title }}</h4>
+
+        <a href="{{ el.get_absolute_url }}" class="text-decoration-none">Смотреть курс</a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block title %} 
+    <h1 class="pt-4 fw-semybold text-dark fs-1 pb-2 align-self-center">
+        Страница авторизации
+    </h1>
+{% endblock %}
+
+{% block content %}
+    <div class="container col-10 col-sm-8 col-lg-6 col-xl-4">
+        <form method="post" class="form-register auth">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="text-start">
+                <button class="btn btn-success" type="submit">Войти</button>
+                <p>Забыли пароль? <a href="{% url 'pass-reset' %}">Получить новый</a></p>  
+            </div>            
+
+        </form>
+    </div>
+{% endblock %}
