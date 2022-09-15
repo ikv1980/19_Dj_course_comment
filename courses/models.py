@@ -57,12 +57,10 @@ class Lesson(models.Model):
 
 
 class Comment(models.Model):
-    def now_time():
-        return timezone.now()
-
     user = models.ForeignKey(User, verbose_name='Автор', on_delete=models.CASCADE)
     post = models.ForeignKey(Lesson, verbose_name='Урок', on_delete=models.CASCADE)
     text = models.TextField('Сообщение', max_length=500)
+    date = models.DateTimeField('Дата', default=timezone.now)
 
     def __str__(self):
         return f'{self.user}. Lesson: {self.post}.'
